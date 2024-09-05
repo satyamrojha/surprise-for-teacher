@@ -24,12 +24,11 @@
         }
         .page {
             display: none;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
         }
-        .page.active {
-            display: block;
-            opacity: 1;
+        .page img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
         .book-container.active {
             display: block;
@@ -64,7 +63,7 @@
             }
         }
         .flash {
-            animation: flashEffect 1s ease-in-out infinite;
+            animation: flashEffect 1s ease-in-out;
         }
         @keyframes flashEffect {
             0% { opacity: 0.2; }
@@ -83,22 +82,27 @@
         <h2>Dear Abhishek Sharma Sir</h2>
         <p>Aap toh knowledge ki dukan hain,</p>
         <p>Padhai ki duniya ke superstar hain!</p>
+        <img src="https://i.postimg.cc/qRhnTdm9/20240905-125020.jpg" alt="Teacher Image">
     </div>
     <div class="page" id="page2">
         <p>Aapki wajah se hum bhi smart hain,</p>
         <p>Books se dosti ki shuruvaat aap se hi toh hui thi yaar!</p>
+        <img src="https://i.postimg.cc/HLQDPJmK/20240905-125030.jpg" alt="Happy Teacher's Day">
     </div>
     <div class="page" id="page3">
         <p>Thank you for being awesome,</p>
         <p>Aur thodi masti bhi karne dena kabhi kabhi! 🎉</p>
+        <img src="https://i.postimg.cc/Yqk4XgHc/Screenshot-97.png" alt="Fun image">
     </div>
     <div class="page" id="page4">
         <p>Happy Teacher’s Day! 🎉</p>
+        <img src="https://i.postimg.cc/FHHYv4zD/Screenshot-98.png" alt="Teacher Image 2">
     </div>
     <div class="page" id="page5">
         <h2>Dear Abhishek Sir,</h2>
         <p>Aap jo samjhate ho, vo kisi rocket science se kam nahi!</p>
         <p>Kabhi kabhi lagta hai, aapke paas sab sawalon ke jawab hain!</p>
+        <img src="https://i.postimg.cc/0579r2Bc/images-1.jpg">
         <p>Thank you so much, dear Abhishek Sir, for your guidance.</p>
         <p>Really, you're the best teacher!</p>
     </div>
@@ -125,9 +129,9 @@
 
     function showPage(page) {
         for (let i = 1; i <= totalPages; i++) {
-            document.getElementById('page' + i).classList.remove('active');
+            document.getElementById('page' + i).style.display = 'none';
         }
-        document.getElementById('page' + page).classList.add('active');
+        document.getElementById('page' + page).style.display = 'block';
     }
 
     function nextPage() {
